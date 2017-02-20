@@ -11,7 +11,8 @@
         android:textColor="@android:color/white"
         android:layout_gravity="center_horizontal"
         android:inputType="textEmailAddress"
-        android:textSize="24dp" />
+        android:textSize="24dp"
+        android:paddingTop="10dp" />
     <EditText
         android:inputType="textEmailAddress"
         android:layout_width="match_parent"
@@ -26,7 +27,8 @@
         android:id="@+id/textView2"
         android:textColor="@android:color/white"
         android:textSize="24dp"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="10dp" />
     <EditText
         android:inputType="textPassword"
         android:layout_width="match_parent"
@@ -39,7 +41,8 @@
         android:id="@+id/textView3"
         android:textColor="@android:color/white"
         android:textSize="24dp"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="10dp" />
     <EditText
         android:inputType="textPassword"
         android:layout_width="match_parent"
@@ -52,7 +55,8 @@
         android:id="@+id/textView4"
         android:textColor="@android:color/white"
         android:textSize="24dp"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="10dp" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,14 +68,17 @@
         android:id="@+id/textView5"
         android:textColor="@android:color/white"
         android:textSize="24dp"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="10dp" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editText5" />
     <Button
         android:text="Registrar"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button1" />
+        android:id="@+id/button1"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="10dp" />
 </LinearLayout>
