@@ -36,10 +36,11 @@ public final class R {
     public static final class layout {
         public static final int clientes=0x7f030000;
         public static final int copiaseguridad=0x7f030001;
-        public static final int facturas=0x7f030002;
-        public static final int login=0x7f030003;
-        public static final int pantallaprincipal=0x7f030004;
-        public static final int seleccionplantillas=0x7f030005;
+        public static final int detallefactura=0x7f030002;
+        public static final int facturas=0x7f030003;
+        public static final int login=0x7f030004;
+        public static final int pantallaprincipal=0x7f030005;
+        public static final int seleccionplantillas=0x7f030006;
     }
     public static final class string {
         public static final int ApplicationName=0x7f040001;
