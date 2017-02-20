@@ -125,7 +125,7 @@ namespace FacturApp
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int EditarUsuario = 2130903040;
+			public const int EditarCliente = 2130903040;
 			
 			// aapt resource value: 0x7f030001
 			public const int PantallaPrincipal = 2130903041;
