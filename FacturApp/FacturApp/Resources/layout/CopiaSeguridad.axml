@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:orientation="vertical"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/linearLayout1">
+    <LinearLayout
+        p1:orientation="vertical"
+        p1:layout_width="match_parent"
+        p1:layout_height="132.5dp"
+        p1:id="@+id/linearLayout2"
+        p1:minWidth="25px"
+        p1:minHeight="25px" />
+    <LinearLayout
+        p1:orientation="vertical"
+        p1:minWidth="25px"
+        p1:minHeight="25px"
+        p1:layout_width="match_parent"
+        p1:layout_height="178.5dp"
+        p1:id="@+id/linearLayout3">
+        <Button
+            p1:text="Realizar Copia de Seguridad"
+            p1:layout_width="match_parent"
+            p1:layout_height="62.0dp"
+            p1:id="@+id/button1" />
+    </LinearLayout>
+    <Button
+        p1:text="Restaurar Copia de Seguridad"
+        p1:layout_width="match_parent"
+        p1:layout_height="66.0dp"
+        p1:id="@+id/button2" />
+</LinearLayout>
