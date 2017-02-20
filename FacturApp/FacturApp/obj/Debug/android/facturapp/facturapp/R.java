@@ -28,6 +28,7 @@ public final class R {
         public static final int linearLayout4=0x7f050008;
         public static final int linearLayout5=0x7f05000a;
         public static final int linearLayout6=0x7f05000d;
+        public static final int linearLayout7=0x7f050011;
         public static final int space1=0x7f050007;
         public static final int textView1=0x7f050001;
         public static final int textView2=0x7f05000f;
@@ -38,6 +39,7 @@ public final class R {
         public static final int facturas=0x7f030002;
         public static final int login=0x7f030003;
         public static final int pantallaprincipal=0x7f030004;
+        public static final int seleccionplantillas=0x7f030005;
     }
     public static final class string {
         public static final int ApplicationName=0x7f040001;

@@ -102,6 +102,9 @@ namespace FacturApp
 			// aapt resource value: 0x7f05000d
 			public const int linearLayout6 = 2131034125;
 			
+			// aapt resource value: 0x7f050011
+			public const int linearLayout7 = 2131034129;
+			
 			// aapt resource value: 0x7f050007
 			public const int space1 = 2131034119;
 			
@@ -138,6 +141,9 @@ namespace FacturApp
 			
 			// aapt resource value: 0x7f030004
 			public const int PantallaPrincipal = 2130903044;
+			
+			// aapt resource value: 0x7f030005
+			public const int SeleccionPlantillas = 2130903045;
 			
 			static Layout()
 			{
