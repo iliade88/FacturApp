@@ -4,7 +4,6 @@
     p1:layout_width="match_parent"
     p1:layout_height="match_parent"
     p1:id="@+id/linearLayout1"
-    p1:background="@android:color/background_light"
     p1:layoutMode="clipBounds">
     <ImageButton
         p1:src="@android:drawable/ic_menu_gallery"

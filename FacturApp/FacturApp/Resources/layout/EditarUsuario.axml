@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:orientation="vertical"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/linearLayout1">
+    <TextView
+        p1:text="Nombre completo"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView1"
+        p1:textColor="@android:color/white"
+        p1:textSize="24dp"
+        p1:layout_gravity="center_horizontal"
+        p1:paddingTop="10dp" />
+    <EditText
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/editText1" />
+    <TextView
+        p1:text="DNI/CIF"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView2"
+        p1:textColor="@android:color/white"
+        p1:textSize="24dp"
+        p1:layout_gravity="center_horizontal"
+        p1:paddingTop="10dp" />
+    <EditText
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/editText2" />
+    <TextView
+        p1:text="Dirección"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView3"
+        p1:textColor="@android:color/white"
+        p1:textSize="24dp"
+        p1:layout_gravity="center_horizontal"
+        p1:paddingTop="10dp" />
+    <EditText
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/editText3" />
+    <TextView
+        p1:text="Teléfono"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView4"
+        p1:textColor="@android:color/white"
+        p1:textSize="24dp"
+        p1:layout_gravity="center_horizontal"
+        p1:paddingTop="10dp" />
+    <EditText
+        p1:inputType="phone"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/editText6"
+        p1:maxLength="9"
+        p1:phoneNumber="true" />
+    <TextView
+        p1:text="Email"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView5"
+        p1:textColor="@android:color/white"
+        p1:textSize="24dp"
+        p1:layout_gravity="center_horizontal"
+        p1:paddingTop="10dp" />
+    <EditText
+        p1:inputType="textEmailAddress"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/editText5" />
+    <Button
+        p1:text="Guardar"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/button1"
+        p1:layout_gravity="center_horizontal"
+        p1:paddingTop="10dp" />
+</LinearLayout>
