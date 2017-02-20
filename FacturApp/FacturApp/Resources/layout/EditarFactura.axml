@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="121.0dp"
+        android:id="@+id/linearLayout1"
+        android:layout_marginBottom="41.0dp">
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="108.0dp"
+            android:id="@+id/imageView1" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="81.0dp"
+        android:id="@+id/linearLayout2">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="62.5dp"
+            android:id="@+id/linearLayout3">
+            <TextView
+                android:text="Cliente"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="109.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView1"
+                android:gravity="center"
+                android:textSize="20" />
+            <TextView
+                android:text="Keko Jones"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="266.5dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView3"
+                android:gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="60.5dp"
+        android:id="@+id/linearLayout4">
+        <TextView
+            android:text="Conceptos"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="36.5dp"
+            android:id="@+id/textView2"
+            android:gravity="fill" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="56.5dp"
+        android:id="@+id/linearLayout5">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="59.0dp"
+            android:id="@+id/linearLayout6">
+            <TextView
+                android:text="Ladrillos 4x4"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="194.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView4"
+                android:gravity="center" />
+            <TextView
+                android:text="20 €"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="190.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView5"
+                android:gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="73.5dp"
+        android:id="@+id/linearLayout7">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="73.5dp"
+            android:id="@+id/linearLayout8">
+            <TextView
+                android:text="Cemento 15 KG"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="191.0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView6"
+                android:gravity="center" />
+            <TextView
+                android:text="33€"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="195.5dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textView7"
+                android:gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="41.5dp"
+        android:id="@+id/linearLayout9" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="77.0dp"
+        android:id="@+id/linearLayout10"
+        android:gravity="center">
+        <Button
+            android:text="Validar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/button1" />
+        <Button
+            android:text="Imprimir"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/button2" />
+        <Button
+            android:text="Enviar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/button3" />
+    </LinearLayout>
+</LinearLayout>
