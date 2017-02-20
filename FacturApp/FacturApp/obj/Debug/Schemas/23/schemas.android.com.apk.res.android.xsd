@@ -2,7 +2,7 @@
 <xs:schema xmlns:android="http://schemas.android.com/apk/res/android" attributeFormDefault="qualified" elementFormDefault="unqualified" targetNamespace="http://schemas.android.com/apk/res/android" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
     <xs:documentation>v23</xs:documentation>
-    <xs:documentation>20/02/2017 21:26:58</xs:documentation>
+    <xs:documentation>20/02/2017 21:33:31</xs:documentation>
   </xs:annotation>
   <xs:attribute name="accessibilityLiveRegion">
     <xs:annotation>
@@ -16723,14 +16723,22 @@
             <xs:enumeration value="@id/button5" />
             <xs:enumeration value="@id/editText1" />
             <xs:enumeration value="@id/editText2" />
+            <xs:enumeration value="@id/editText3" />
+            <xs:enumeration value="@id/editText4" />
+            <xs:enumeration value="@id/editText5" />
+            <xs:enumeration value="@id/editText6" />
             <xs:enumeration value="@id/imageButton1" />
+            <xs:enumeration value="@id/imageView1" />
             <xs:enumeration value="@id/linearLayout1" />
+            <xs:enumeration value="@id/linearLayout10" />
             <xs:enumeration value="@id/linearLayout2" />
             <xs:enumeration value="@id/linearLayout3" />
             <xs:enumeration value="@id/linearLayout4" />
             <xs:enumeration value="@id/linearLayout5" />
             <xs:enumeration value="@id/linearLayout6" />
             <xs:enumeration value="@id/linearLayout7" />
+            <xs:enumeration value="@id/linearLayout8" />
+            <xs:enumeration value="@id/linearLayout9" />
             <xs:enumeration value="@id/space1" />
             <xs:enumeration value="@id/textView1" />
             <xs:enumeration value="@id/textView2" />
