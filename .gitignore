@@ -9,10 +9,10 @@
 *.class
 
 # Generated files
-bin/
 gen/
 out/
-obj/
+**/bin/*
+**/obj/*
 
 # Gradle files
 .gradle/
