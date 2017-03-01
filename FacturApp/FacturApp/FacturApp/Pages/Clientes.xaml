@@ -22,6 +22,7 @@
                     <Button Text="Añadir cliente"
                        Image="anyadir_cliente"
                        BackgroundColor="Black"
+                       HorizontalOptions="FillAndExpand"
                        TextColor="White"
                        FontAttributes="Bold"></Button>
             </StackLayout>
