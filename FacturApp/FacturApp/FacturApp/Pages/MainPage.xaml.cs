@@ -16,5 +16,10 @@ namespace FacturApp.Pages
         {
             InitializeComponent();
         }
+
+        private void btn_clientes_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Clientes());
+        }
     }
 }
