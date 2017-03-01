@@ -11,7 +11,7 @@ namespace FacturApp
     {
         public App()
         {
-            MainPage = new Pages.Login();
+            MainPage = new NavigationPage(new Pages.Login());
         }
 
         protected override void OnStart()

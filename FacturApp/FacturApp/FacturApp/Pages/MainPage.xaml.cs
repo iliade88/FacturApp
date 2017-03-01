@@ -10,17 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace FacturApp.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Login : ContentPage
+    public partial class MainPage : ContentPage
     {
-        public Login()
+        public MainPage()
         {
             InitializeComponent();
-            
-        }
-
-        private void btnlogin_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new MainPage());
         }
     }
 }
