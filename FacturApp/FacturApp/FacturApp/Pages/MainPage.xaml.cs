@@ -21,5 +21,10 @@ namespace FacturApp.Pages
         {
             Navigation.PushAsync(new Clientes());
         }
+
+        private void btn_plantillas_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Plantillas());
+        }
     }
 }
