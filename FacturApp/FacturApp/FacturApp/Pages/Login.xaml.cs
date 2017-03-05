@@ -22,5 +22,10 @@ namespace FacturApp.Pages
         {
             Navigation.PushAsync(new MainPage());
         }
+
+        private void btnregister_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Registro());
+        }
     }
 }

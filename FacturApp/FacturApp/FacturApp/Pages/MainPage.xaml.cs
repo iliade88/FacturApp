@@ -15,6 +15,9 @@ namespace FacturApp.Pages
         public MainPage()
         {
             InitializeComponent();
+            var tgr = new TapGestureRecognizer();
+            tgr.Tapped += image_Clicked;
+            this.imagen.GestureRecognizers.Add(tgr);
         }
 
         private void btn_clientes_Clicked(object sender, EventArgs e)
@@ -25,6 +28,11 @@ namespace FacturApp.Pages
         private void btn_plantillas_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new Plantillas());
+        }
+
+        private void image_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new EditarPerfil());
         }
     }
 }

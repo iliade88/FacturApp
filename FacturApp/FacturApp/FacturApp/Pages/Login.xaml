@@ -19,5 +19,9 @@
             x:Name="btnlogin"
             Clicked="btnlogin_Clicked"
             Text="Sign in"></Button>
+        <Button
+            x:Name="btnregister"
+            Clicked="btnregister_Clicked"
+            Text="Sign up"></Button>
     </StackLayout>
 </ContentPage>

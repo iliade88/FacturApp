@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FacturApp.Pages.Perfil"
+             Title="Perfil">
+    <StackLayout>
+        <Image Grid.Row="0" Margin="0,10,0,0" Source="icon"></Image>
+        <Label Text="Email"/>
+        <Entry x:Name="email"></Entry>
+        <Label Text="Dni/Cif"/>
+        <Entry x:Name="email"></Entry>
+        <Label Text="Nombre completo"/>
+        <Entry x:Name="email"></Entry>
+        <Label Text="Email copia de seguridad"/>
+        <Entry x:Name="email"></Entry>
+        <Label Text="Dirección"/>
+        <Entry x:Name="email"></Entry>
+        <Label Text="Teléfono"/>
+        <Entry x:Name="email"></Entry>
+    </StackLayout>
+
+</ContentPage>
