@@ -7,11 +7,11 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="7862e80d-9b4c-42a8-baa1-03800fb6c812"
+    Name="3b88dcd2-c6ed-427b-a20e-b49463232710"
     Publisher="CN=Cris"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="7862e80d-9b4c-42a8-baa1-03800fb6c812" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="3b88dcd2-c6ed-427b-a20e-b49463232710" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>FacturApp.UWP</DisplayName>

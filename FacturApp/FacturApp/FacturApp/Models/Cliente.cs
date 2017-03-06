@@ -31,5 +31,14 @@ namespace FacturApp.Models
             this.telefono = telefono;
             this.email = email;
         }
+
+        public Cliente(Cliente cliente)
+        {
+            this.nombre = cliente.nombre;
+            this.dnicif = cliente.dnicif;
+            this.direccion = cliente.direccion;
+            this.telefono = cliente.telefono;
+            this.email = cliente.email;
+        }
     }
 }

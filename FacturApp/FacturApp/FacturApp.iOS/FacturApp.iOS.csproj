@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D6EB7589-1745-469F-BE78-FA0F40640804}</ProjectGuid>
+    <ProjectGuid>{93319BB2-B0D7-419A-8C34-759C99271ABF}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>FacturApp.iOS</RootNamespace>
@@ -139,12 +139,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FacturApp\FacturApp.csproj">
-      <Project>{15e66b28-e2e6-4170-a396-ba2e9b366035}</Project>
+      <Project>{d9fad987-42a5-4df6-90d0-9ab44ba2d200}</Project>
       <Name>FacturApp</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\cliente.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

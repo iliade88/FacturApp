@@ -1,0 +1,49 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FacturApp.Pages.Facturas"
+             Title="Facturas">
+    <ListView ItemsSource="{Binding ItemsGrouped}"
+                ItemTapped="Handle_ItemTapped"
+                ItemSelected="Handle_ItemSelected"
+                HasUnevenRows="true"
+                GroupShortNameBinding="{Binding Key}"
+                IsGroupingEnabled="true"
+                GroupDisplayBinding="{Binding Key}"
+                IsPullToRefreshEnabled="true"
+                CachingStrategy="RecycleElement"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                RefreshCommand="{Binding RefreshDataCommand}">
+        <ListView.Header>
+            <StackLayout Padding="10" 
+                       Orientation="Horizontal"
+                       HorizontalOptions="FillAndExpand"
+                       BackgroundColor="Black">
+                <Button Text="Nueva factura"
+                       Image="anyadir_cliente"
+                       BackgroundColor="Black"
+                       HorizontalOptions="FillAndExpand"
+                       TextColor="White"
+                       FontAttributes="Bold"></Button>
+            </StackLayout>
+        </ListView.Header>
+        <!--Built in Cells-->
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.3*" />
+                                <ColumnDefinition Width="0.8*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Nº Factura" Grid.Row="0" Grid.Column="0" />
+                            <Label Text="{Binding numfactura}" Grid.Row="0" Grid.Column="1" />
+                            <Label Text="Fecha" Grid.Row="1" Grid.Column="0" />
+                            <Label Text="{Binding fecha, StringFormat='{}{0:dd/MM/yyyy}'}" Grid.Row="1" Grid.Column="1" />
+                        </Grid>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

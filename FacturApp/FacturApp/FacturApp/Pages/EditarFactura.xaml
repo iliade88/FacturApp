@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FacturApp.Pages.EditarFactura">
+    <StackLayout>
+        <Picker Title="Cliente:">
+            <Picker.Items>
+                <x:String>Cristobal Jesus</x:String>
+                <x:String>Mario Navarro</x:String>
+                <x:String>Antonio Jose</x:String>
+                <x:String>Alberto Sapina</x:String>
+                <x:String>Yaiza Carstairs</x:String>
+                <x:String>Jorge Garcia</x:String>
+                <x:String>Noemi Nosabes</x:String>
+            </Picker.Items>
+        </Picker>
+        <ScrollView>
+            <Label Text="Conceptos"></Label>
+            <ListView ItemsSource="{Binding conceptos}">
+                <ListView.Header>
+                    <StackLayout Padding="10" 
+                               Orientation="Horizontal"
+                               HorizontalOptions="FillAndExpand"
+                               BackgroundColor="Black">
+                        <Button Text="Nueva factura"
+                               Image="anyadir_cliente"
+                               BackgroundColor="Black"
+                               HorizontalOptions="FillAndExpand"
+                               TextColor="White"
+                               FontAttributes="Bold"></Button>
+                    </StackLayout>
+                </ListView.Header>
+                <!--Built in Cells-->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.8*" />
+                                        <ColumnDefinition Width="0.1*" />
+                                        <ColumnDefinition Width="0.1*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding concepto.texto}" Grid.Row="0" Grid.Column="0" />
+                                    <Label Text="{Binding concepto.precio}" Grid.Row="0" Grid.Column="1" />
+                                    <Image Source="editar"></Image>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.5*" />
+                </Grid.ColumnDefinitions>
+                <Button 
+                    Text="Añadir concepto"
+                    Image="anyadir"
+                    Grid.Row="0" Grid.Column="0"></Button>
+                <Button 
+                    Text="Seleccionar Plantilla"
+                    Image="plantillas"
+                    Grid.Row="0" Grid.Column="1"></Button>
+            </Grid>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

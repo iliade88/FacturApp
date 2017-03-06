@@ -5,7 +5,7 @@
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{15E66B28-E2E6-4170-A396-BA2E9B366035}</ProjectGuid>
+    <ProjectGuid>{D32B711F-981F-465F-9CE8-537D20752E35}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FacturApp</RootNamespace>
@@ -35,54 +35,33 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="App.cs" />
-    <Compile Include="Models\Cliente.cs" />
-    <Compile Include="Pages\Clientes.xaml.cs">
-      <DependentUpon>Clientes.xaml</DependentUpon>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\EditarCliente.xaml.cs">
-      <DependentUpon>EditarCliente.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\EditarPerfil.xaml.cs">
-      <DependentUpon>EditarPerfil.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\MainPage.xaml.cs">
+    <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Plantillas.xaml.cs">
-      <DependentUpon>Plantillas.xaml</DependentUpon>
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Factura.cs" />
+    <Compile Include="Pages\DetalleFactura.xaml.cs">
+      <DependentUpon>DetalleFactura.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PlantillasTab1.xaml.cs">
-      <DependentUpon>PlantillasTab1.xaml</DependentUpon>
+    <Compile Include="Pages\EditarFactura.xaml.cs">
+      <DependentUpon>EditarFactura.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Registro.xaml.cs">
-      <DependentUpon>Registro.xaml</DependentUpon>
+    <Compile Include="Pages\Facturas.xaml.cs">
+      <DependentUpon>Facturas.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="GettingStarted.Xamarin" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\Login.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    <EmbeddedResource Include="MainPage.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\MainPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    <EmbeddedResource Include="App.xaml">
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\Clientes.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -100,31 +79,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\Plantillas.xaml">
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\Facturas.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\PlantillasTab1.xaml">
+    <EmbeddedResource Include="Pages\DetalleFactura.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Pages\EditarCliente.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\EditarPerfil.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Pages\Registro.xaml">
+    <EmbeddedResource Include="Pages\EditarFactura.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
