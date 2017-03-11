@@ -13,4 +13,10 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="clientes">Clientes</string>
+    <string name="facturas">Facturas</string>
+    <string name="plantillas">Plantillas</string>
+    <string name="hacer_copia_seguridad">Hacer copia de seguridad</string>
+    <string name="restaurar_copia_seguridad">Restaurar copia de seguridad</string>
 </resources>
