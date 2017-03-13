@@ -19,7 +19,9 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.text.SpannableString;
 import android.text.TextUtils;
+import android.text.style.UnderlineSpan;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -60,6 +62,25 @@ public class LoginActivity extends AppCompatActivity {
                     case R.id.email_sign_in_button:
 
                         Intent intent = new Intent(view.getContext(), MainActivity.class);
+                        startActivity(intent);
+                        break;
+                }
+            }
+        });
+
+        final TextView link_registro = (TextView) findViewById(R.id.link_registro);
+
+        SpannableString string = new SpannableString(getResources().getString(R.string.registrate));
+        string.setSpan(new UnderlineSpan(), 0, string.length(), 0);
+        link_registro.setText(string);
+        link_registro.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (view.getId())
+                {
+                    case R.id.link_registro:
+
+                        Intent intent = new Intent(view.getContext(), Registro.class);
                         startActivity(intent);
                         break;
                 }
