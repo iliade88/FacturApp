@@ -25,7 +25,10 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" />
-        <activity android:name=".RegistroActivity"></activity>
+        <activity android:name=".RegistroActivity" />
+        <activity
+            android:name=".ClientesActivity"
+            android:label="FacturApp"></activity>
     </application>
 
 </manifest>
