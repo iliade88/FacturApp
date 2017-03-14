@@ -28,7 +28,8 @@
         <activity android:name=".RegistroActivity" />
         <activity
             android:name=".ClientesActivity"
-            android:label="FacturApp"></activity>
+            android:label="FacturApp" />
+        <activity android:name=".FacturasActivity"></activity>
     </application>
 
 </manifest>

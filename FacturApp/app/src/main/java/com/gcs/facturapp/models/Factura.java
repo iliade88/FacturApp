@@ -11,15 +11,17 @@ public class Factura {
     public long id;
     public Date fecha;
     public Cliente cliente;
+    public float precio_total;
     public ArrayList<Concepto> conceptos;
 
     public Factura(){};
 
-    public Factura(long id, Date fecha, Cliente cliente, ArrayList<Concepto> conceptos)
+    public Factura(long id, Date fecha, Cliente cliente, float precio_total, ArrayList<Concepto> conceptos)
     {
         this.id = id;
         this.fecha = fecha;
         this.cliente = cliente;
+        this.precio_total = precio_total;
         this.conceptos = conceptos;
     }
 
@@ -28,6 +30,7 @@ public class Factura {
         this.id = -1;
         this.fecha = factura.fecha;
         this.cliente = factura.cliente;
+        this.precio_total = factura.precio_total;
         this.conceptos = (ArrayList<Concepto>) factura.conceptos.clone();
     }
 

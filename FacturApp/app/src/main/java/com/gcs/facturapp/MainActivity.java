@@ -16,6 +16,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setClickListenerBotonClientes();
+        setClickListenerBotonFacturas();
+
+    }
+
+    protected void setClickListenerBotonClientes()
+    {
         Button boton_clientes = (Button) findViewById(R.id.boton_clientes);
         boton_clientes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,7 +36,23 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
 
+    protected void setClickListenerBotonFacturas()
+    {
+        Button boton_clientes = (Button) findViewById(R.id.boton_facturas);
+        boton_clientes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (view.getId()) {
+                    case R.id.boton_facturas:
+
+                        Intent intent = new Intent(view.getContext(), FacturasActivity.class);
+                        startActivity(intent);
+                        break;
+                }
+            }
+        });
     }
 
 }

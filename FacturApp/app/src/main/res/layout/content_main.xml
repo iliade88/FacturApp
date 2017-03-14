@@ -28,6 +28,7 @@
         android:drawableLeft="@drawable/cliente"/>
 
     <Button
+        android:id="@+id/boton_facturas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -35,6 +36,7 @@
         android:drawableLeft="@drawable/factura"/>
 
     <Button
+        android:id="@+id/boton_plantillas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -42,6 +44,7 @@
         android:drawableLeft="@drawable/plantilla"/>
 
     <Button
+        android:id="@+id/boton_hacer_backup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -49,6 +52,7 @@
         android:drawableLeft="@drawable/backup"/>
 
     <Button
+        android:id="@+id/boton_restaurar_backup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

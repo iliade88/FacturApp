@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:paddingLeft="5sp" android:paddingRight="5sp"
+    android:paddingTop="5sp" android:paddingBottom="5sp">
+    <TextView
+        android:id="@+id/id_factura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5sp"
+        android:gravity="left"/>
+    <TextView
+        android:id="@+id/fecha_factura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/id_factura"/>
+    <TextView
+        android:id="@+id/nombre_cliente"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@id/fecha_factura"
+        android:paddingTop="5sp"
+        android:gravity="center_horizontal"/>
+    <TextView
+        android:id="@+id/precio_total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:foregroundGravity="center_vertical"/>
+
+</RelativeLayout>
