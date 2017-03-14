@@ -34,4 +34,5 @@
     <string name="validar_factura">Validar</string>
     <string name="imprimir_factura">Imprimir</string>
     <string name="enviar_factura">Enviar por email</string>
+    <string name="editar_perfil">Editar perfil</string>
 </resources>
