@@ -1,9 +1,5 @@
 package com.gcs.facturapp.models;
 
-/**
- * Created by Cris on 13/03/2017.
- */
-
 public class Concepto {
 
     public long id_factura;
@@ -12,7 +8,7 @@ public class Concepto {
     public int precio;
     public int cantidad;
 
-    public Concepto(){};
+    public Concepto(){}
 
     public Concepto(long id_factura, short id_concepto, String descripcion, int precio, int cantidad)
     {

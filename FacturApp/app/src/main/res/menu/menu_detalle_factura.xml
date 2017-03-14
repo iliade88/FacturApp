@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".DetalleFacturaActivity">
+
+    <item
+        android:id="@+id/validar_factura"
+        android:icon="@drawable/check"
+        app:showAsAction="ifRoom|withText"
+        android:title="@string/validar_factura" />
+
+    <item
+        android:id="@+id/imprimir_factura"
+        android:icon="@drawable/impresora"
+        app:showAsAction="ifRoom|withText"
+        android:title="@string/imprimir_factura" />
+
+    <item
+        android:id="@+id/enviar_factura"
+        android:icon="@android:drawable/ic_dialog_email"
+        app:showAsAction="ifRoom|withText"
+        android:title="@string/enviar_factura" />
+</menu>

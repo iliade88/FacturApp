@@ -3,10 +3,6 @@ package com.gcs.facturapp.models;
 import java.util.ArrayList;
 import java.util.Date;
 
-/**
- * Created by Cris on 13/03/2017.
- */
-
 public class Factura {
     public long id;
     public Date fecha;
@@ -14,7 +10,7 @@ public class Factura {
     public float precio_total;
     public ArrayList<Concepto> conceptos;
 
-    public Factura(){};
+    public Factura(){}
 
     public Factura(long id, Date fecha, Cliente cliente, float precio_total, ArrayList<Concepto> conceptos)
     {

@@ -1,9 +1,5 @@
 package com.gcs.facturapp.models;
 
-/**
- * Created by Cris on 13/03/2017.
- */
-
 public class Cliente {
     public String nombre;
     public String apellidos;
@@ -12,7 +8,7 @@ public class Cliente {
     public String telefono;
     public String email;
 
-    public Cliente(){};
+    public Cliente(){}
 
     public Cliente(String nombre, String apellidos, String dnicif, String direccion, String telefono, String email)
     {

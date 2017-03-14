@@ -12,12 +12,6 @@ import java.util.ArrayList;
 import com.gcs.facturapp.R;
 import com.gcs.facturapp.models.Cliente;
 
-import org.w3c.dom.Text;
-
-/**
- * Created by Cris on 13/03/2017.
- */
-
 public class ClienteAdapter extends BaseAdapter {
 
     private Context mContext;

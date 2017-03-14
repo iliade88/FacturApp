@@ -27,4 +27,11 @@
     <string name="enviar">Enviar</string>
     <string name="registrate">¡Registrate!</string>
     <string name="crear_cliente">Nuevo cliente</string>
+    <string name="title_activity_detalle_factura">DetalleFacturaActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="validar_factura">Validar</string>
+    <string name="imprimir_factura">Imprimir</string>
+    <string name="enviar_factura">Enviar por email</string>
 </resources>

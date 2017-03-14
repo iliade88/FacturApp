@@ -12,12 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import com.gcs.facturapp.R;
-import com.gcs.facturapp.models.Cliente;
 import com.gcs.facturapp.models.Factura;
-
-/**
- * Created by Cris on 14/03/2017.
- */
 
 public class FacturaAdapter extends BaseAdapter {
     private Context mContext;
@@ -67,7 +62,7 @@ public class FacturaAdapter extends BaseAdapter {
 
         id_factura.setText(Long.toString(factura.id));
         String fecha = df.format(factura.fecha);
-        /* Comentado porque se carga el layout, hasta que se encuentre solucion
+        /* TODO Comentado porque se carga el layout, hasta que se encuentre solucion
         fecha_factura.setText(fecha);*/
         nombre_cliente.setText(factura.cliente.nombre+" "+factura.cliente.apellidos);
         precio_total.setText(String.format("%.2f", factura.precio_total) + "€");
