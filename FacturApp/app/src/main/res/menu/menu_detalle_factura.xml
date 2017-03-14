@@ -17,7 +17,7 @@
 
     <item
         android:id="@+id/enviar_factura"
-        android:icon="@android:drawable/ic_dialog_email"
+        android:icon="@drawable/email"
         app:showAsAction="ifRoom|withText"
         android:title="@string/enviar_factura" />
 </menu>

@@ -35,4 +35,6 @@
     <string name="imprimir_factura">Imprimir</string>
     <string name="enviar_factura">Enviar por email</string>
     <string name="editar_perfil">Editar perfil</string>
+    <string name="guardar_cambios">Guardar cambios</string>
+    <string name="cancelar_cambios">Cancelar cambios</string>
 </resources>

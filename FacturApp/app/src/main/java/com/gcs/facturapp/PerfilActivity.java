@@ -31,6 +31,7 @@ public class PerfilActivity extends AppCompatActivity {
     private ViewSwitcher switcher_apellidos;
     private TextView apellidos;
     private EditText nuevos_apellidos;
+    private ViewSwitcher switcher_botones_editar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +59,7 @@ public class PerfilActivity extends AppCompatActivity {
         switcher_apellidos = (ViewSwitcher) findViewById(R.id.switcher_editar_apellidos);
         apellidos = (TextView) findViewById(R.id.apellidos);
         nuevos_apellidos = (EditText) findViewById(R.id.nuevos_apellidos);
+        switcher_botones_editar = (ViewSwitcher) findViewById(R.id.switcher_botones_editar);
 
         email.setText("mario@viajesta.com");
         contrasena.setText("Hola");
@@ -65,20 +67,39 @@ public class PerfilActivity extends AppCompatActivity {
         nombre_empresa.setText("Viajesta S.A.");
         nombre.setText("Mario");
         apellidos.setText("Navarro Ruiz");
+    }
 
-        Button boton = (Button) findViewById(R.id.boton_editar_perfil);
-        boton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switch (v.getId())
-                {
-                    case R.id.boton_editar_perfil:
+    public void onClickEditarPerfil(View v)
+    {
+        switch (v.getId())
+        {
+            case R.id.boton_editar_perfil:
 
-                        toogleSwitchers();
-                        break;
-                }
-            }
-        });
+                toogleSwitchers();
+                break;
+        }
+    }
+
+    public void onClickGuardarCambios(View v)
+    {
+        switch (v.getId())
+        {
+            case R.id.boton_guardar_cambios_perfil:
+
+                toogleSwitchers();
+                break;
+        }
+    }
+
+    public void onClickCancelarCambios(View v)
+    {
+        switch (v.getId())
+        {
+            case R.id.boton_cancelar_cambios_perfil:
+
+                toogleSwitchers();
+                break;
+        }
     }
 
     public void toogleSwitchers()
@@ -88,11 +109,15 @@ public class PerfilActivity extends AppCompatActivity {
         //Cambiamos entre textview y edittext
         switcher_email.showNext();
         switcher_contrasena.showNext();
-        switcher_repetir_contrasena.showNext();
+        if (en_edicion)
+            switcher_repetir_contrasena.setVisibility(View.VISIBLE);
+        else
+            switcher_repetir_contrasena.setVisibility(View.GONE);
         switcher_dnicif.showNext();
         switcher_nombre_empresa.showNext();
         switcher_nombre.showNext();
         switcher_apellidos.showNext();
+        switcher_botones_editar.showNext();
 
         //Copiamos los valores al text o al edit segun si estamos editando o no
         copiaValorSegunEdicion(en_edicion, email, edit_email);
