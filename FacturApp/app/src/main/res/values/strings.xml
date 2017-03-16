@@ -26,7 +26,6 @@
     <string name="apellidos">Apellidos</string>
     <string name="enviar">Enviar</string>
     <string name="registrate">¡Registrate!</string>
-    <string name="crear_cliente">Nuevo cliente</string>
     <string name="title_activity_detalle_factura">DetalleFacturaActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
@@ -40,4 +39,8 @@
     <string name="nombre_completo">Nombre completo</string>
     <string name="telefono">Teléfono</string>
     <string name="direccion">Dirección</string>
+    <string name="crear_cliente">Crear cliente</string>
+    <string name="nombre_cliente">Nombre</string>
+    <string name="email_cliente">Email</string>
+    <string name="cancelar">Cancelar</string>
 </resources>
