@@ -1,10 +1,12 @@
 package com.gcs.facturapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.gcs.facturapp.adapters.ClienteAdapter;
@@ -31,6 +33,15 @@ public class ClientesActivity extends AppCompatActivity {
 
         ClienteAdapter adapter = new ClienteAdapter(this, clientes);
         lista_clientes.setAdapter(adapter);
+        lista_clientes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Cliente cliente_seleccionado = clientes.get(position);
+
+                Intent detalle = new Intent(view.getContext(), DetalleClienteActivity.class);
+                startActivity(detalle);
+            }
+        });
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

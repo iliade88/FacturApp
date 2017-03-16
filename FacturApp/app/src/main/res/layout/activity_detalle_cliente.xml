@@ -4,20 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.gcs.facturapp.PerfilActivity">
+    tools:context="com.gcs.facturapp.DetalleClienteActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <!--TODO hacer que se abra el explorador para cargar una imagen-->
-        <ImageButton
-            android:layout_gravity="center"
-            android:layout_width="@android:dimen/thumbnail_width"
-            android:layout_height="@android:dimen/thumbnail_height" />
+        android:orientation="vertical"
+        android:layout_marginTop="10sp">
 
         <ViewSwitcher
-            android:id="@+id/switcher_editar_email"
+            android:id="@+id/switcher_editar_nombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -25,85 +21,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:id="@+id/email_label"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:gravity="center_horizontal"
-                    android:text="@string/prompt_email"/>
-                <TextView
-                    android:id="@+id/email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:layout_below="@id/email_label"/>
-            </RelativeLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <EditText
-                    android:id="@+id/nuevo_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/prompt_email"
-                    android:inputType="textEmailAddress"
-                    android:maxLines="1"/>
-            </android.support.design.widget.TextInputLayout>
-        </ViewSwitcher>
-
-        <ViewSwitcher
-            android:id="@+id/switcher_editar_contrasena"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/contrasena_label"
+                    android:id="@+id/nombre_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:textStyle="bold"
-                    android:text="@string/prompt_password"/>
+                    android:text="@string/nombre_completo"/>
                 <TextView
-                    android:id="@+id/contrasena"
+                    android:id="@+id/nombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:inputType="textPassword"
-                    android:layout_below="@id/contrasena_label"/>
+                    android:layout_below="@id/nombre_label"/>
             </RelativeLayout>
-
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
-                    android:id="@+id/nueva_contrasena"
+                    android:id="@+id/nuevo_nombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_password"
-                    android:inputType="textPassword"
-                    android:maxLines="1" />
-            </android.support.design.widget.TextInputLayout>
-        </ViewSwitcher>
-
-        <ViewSwitcher
-            android:id="@+id/switcher_repetir_contrasena"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone">
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <EditText
-                    android:id="@+id/repeat_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/repetir_contrasenya"
-                    android:inputType="textPassword"
+                    android:hint="@string/nombre_completo"
+                    android:inputType="text"
                     android:maxLines="1" />
             </android.support.design.widget.TextInputLayout>
         </ViewSwitcher>
@@ -143,8 +82,9 @@
                     android:maxLines="1" />
             </android.support.design.widget.TextInputLayout>
         </ViewSwitcher>
+
         <ViewSwitcher
-            android:id="@+id/switcher_editar_nombre_empresa"
+            android:id="@+id/switcher_editar_direccion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -152,35 +92,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:id="@+id/nombre_empresa_label"
+                    android:id="@+id/direccion_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:textStyle="bold"
-                    android:text="@string/nombre_empresa"/>
+                    android:text="@string/direccion"/>
                 <TextView
-                    android:id="@+id/nombre_empresa"
+                    android:id="@+id/direccion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:layout_below="@id/nombre_empresa_label"/>
+                    android:layout_below="@id/direccion_label"/>
             </RelativeLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
-                    android:id="@+id/nuevo_nombre_empresa"
+                    android:id="@+id/nueva_direccion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/nombre_empresa"
+                    android:hint="@string/direccion"
                     android:inputType="text"
                     android:maxLines="1" />
             </android.support.design.widget.TextInputLayout>
         </ViewSwitcher>
 
         <ViewSwitcher
-            android:id="@+id/switcher_editar_nombre"
+            android:id="@+id/switcher_editar_telefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -188,34 +128,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:id="@+id/nombre_label"
+                    android:id="@+id/telefono_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:textStyle="bold"
-                    android:text="@string/nombre"/>
+                    android:text="@string/telefono"/>
                 <TextView
-                    android:id="@+id/nombre"
+                    android:id="@+id/telefono"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:layout_below="@id/nombre_label"/>
+                    android:layout_below="@id/telefono_label"/>
             </RelativeLayout>
+
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
-                    android:id="@+id/nuevo_nombre"
+                    android:id="@+id/nuevo_telefono"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/nombre"
+                    android:hint="@string/telefono"
                     android:inputType="text"
                     android:maxLines="1" />
             </android.support.design.widget.TextInputLayout>
         </ViewSwitcher>
 
         <ViewSwitcher
-            android:id="@+id/switcher_editar_apellidos"
+            android:id="@+id/switcher_editar_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -223,30 +164,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:id="@+id/apellidos_label"
+                    android:id="@+id/email_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
                     android:textStyle="bold"
-                    android:text="@string/apellidos"/>
+                    android:gravity="center_horizontal"
+                    android:text="@string/prompt_email"/>
                 <TextView
-                    android:id="@+id/apellidos"
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:layout_below="@id/apellidos_label"/>
+                    android:layout_below="@id/email_label"/>
             </RelativeLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
-                    android:id="@+id/nuevos_apellidos"
+                    android:id="@+id/nuevo_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/apellidos"
-                    android:inputType="text"
-                    android:maxLines="1" />
+                    android:hint="@string/prompt_email"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"/>
             </android.support.design.widget.TextInputLayout>
         </ViewSwitcher>
 
@@ -256,38 +197,37 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/boton_editar_perfil"
+                android:id="@+id/boton_editar_cliente"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="@string/editar_perfil"
-                android:drawableLeft="@drawable/editar"
-                android:onClick="onClickEditarPerfil"/>
+                android:drawableStart="@drawable/editar"
+                android:onClick="onClickEditarCliente"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/boton_cancelar_cambios_perfil"
+                    android:id="@+id/boton_cancelar_cambios_cliente"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
                     android:backgroundTint="@color/colorPrimary"
                     android:text="@string/cancelar_cambios"
-                    android:drawableLeft="@drawable/cancel"
+                    android:drawableStart="@drawable/cancel"
                     android:onClick="onClickCancelarCambios"/>
 
                 <Button
-                    android:id="@+id/boton_guardar_cambios_perfil"
+                    android:id="@+id/boton_guardar_cambios_cliente"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
                     android:text="@string/guardar_cambios"
-                    android:drawableLeft="@drawable/editar"
+                    android:drawableStart="@drawable/editar"
                     android:onClick="onClickGuardarCambios"/>
             </LinearLayout>
         </ViewSwitcher>
-
     </LinearLayout>
 </ScrollView>

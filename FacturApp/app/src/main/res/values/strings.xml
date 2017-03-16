@@ -37,4 +37,7 @@
     <string name="editar_perfil">Editar perfil</string>
     <string name="guardar_cambios">Guardar cambios</string>
     <string name="cancelar_cambios">Cancelar cambios</string>
+    <string name="nombre_completo">Nombre completo</string>
+    <string name="telefono">Teléfono</string>
+    <string name="direccion">Dirección</string>
 </resources>

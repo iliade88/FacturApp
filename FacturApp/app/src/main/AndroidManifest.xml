@@ -33,7 +33,8 @@
         <activity
             android:name=".DetalleFacturaActivity"
             android:label="FacturApp" />
-        <activity android:name=".PerfilActivity"></activity>
+        <activity android:name=".PerfilActivity" />
+        <activity android:name=".DetalleClienteActivity"></activity>
     </application>
 
 </manifest>
