@@ -18,7 +18,7 @@ public class Factura {
         this.fecha = fecha;
         this.cliente = cliente;
         this.precio_total = precio_total;
-        this.conceptos = conceptos;
+        this.conceptos = (ArrayList<Concepto>) conceptos.clone();
     }
 
     public Factura(Factura factura)

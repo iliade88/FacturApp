@@ -5,12 +5,12 @@ public class Concepto {
     public long id_factura;
     public short id_concepto;
     public String descripcion;
-    public int precio;
+    public float precio;
     public int cantidad;
 
     public Concepto(){}
 
-    public Concepto(long id_factura, short id_concepto, String descripcion, int precio, int cantidad)
+    public Concepto(long id_factura, short id_concepto, String descripcion, float precio, int cantidad)
     {
         this.id_factura = id_factura;
         this.id_concepto = id_concepto;

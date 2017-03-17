@@ -7,23 +7,36 @@
     android:orientation="vertical"
     tools:context="com.gcs.facturapp.DetalleFacturaActivity">
 
+    <TextView
+        android:id="@+id/label_cliente_factura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cliente: "/>
+    <TextView
+        android:id="@+id/cliente_factura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mario navarro"
+        android:layout_toEndOf="@+id/label_cliente_factura"/> <!-- TODO cargar nombre de usuario -->
+    <!--TODO crear listview de conceptos-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/cliente_factura">
+        <GridView
+            android:id="@+id/listview_conceptos_detalle_factura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </GridView>
+    </LinearLayout>
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/menu_detalle_factura"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimary"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <!--TODO crear listview de conceptos-->
-        <TextView
-            android:id="@+id/mensaje_detalle_factura"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/crear_cliente" />
-
-    </LinearLayout>
 
 </RelativeLayout>
