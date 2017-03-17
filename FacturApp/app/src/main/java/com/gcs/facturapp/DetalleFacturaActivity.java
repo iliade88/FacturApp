@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -79,6 +81,8 @@ public class DetalleFacturaActivity extends AppCompatActivity {
         //Y después la lista de conceptos
         factura = creaFacturaStub();
         listview_conceptos = (ListView) findViewById(R.id.listview_conceptos_detalle_factura);
+        View header = getLayoutInflater().inflate(R.layout.header_listview_conceptos, null);
+        listview_conceptos.addHeaderView(header);
         ConceptoAdapter adapter = new ConceptoAdapter(this, factura.conceptos);
         listview_conceptos.setAdapter(adapter);
     }

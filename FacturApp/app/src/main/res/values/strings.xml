@@ -43,4 +43,9 @@
     <string name="nombre_cliente">Nombre</string>
     <string name="email_cliente">Email</string>
     <string name="cancelar">Cancelar</string>
+    <string name="concepto">Concepto</string>
+    <string name="coste_unitario">c/u</string>
+    <string name="cantidad">Cantidad</string>
+    <string name="Total">Total</string>
+    <string name="cliente_dp">Cliente: </string>
 </resources>

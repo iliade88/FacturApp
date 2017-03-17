@@ -59,7 +59,7 @@ public class ConceptoAdapter extends BaseAdapter {
         Concepto concepto = (Concepto) getItem(position);
 
         descripcion_concepto.setText(concepto.descripcion);
-        precio_concepto.setText(Float.toString(concepto.precio));
+        precio_concepto.setText(Float.toString(concepto.precio) + "€");
         cantidad_concepto.setText(Integer.toString(concepto.cantidad));
         precio_total_concepto.setText(Float.toString(concepto.precio * concepto.cantidad) + "€");
 
