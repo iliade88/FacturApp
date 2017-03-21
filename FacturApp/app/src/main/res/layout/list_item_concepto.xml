@@ -7,27 +7,24 @@
         android:id="@+id/descripcion_concepto"
         android:layout_width="0dp"
         android:layout_weight="2.5"
-        android:layout_height="wrap_content"
-        android:paddingTop="5sp"
+        android:layout_height="match_parent"
         android:layout_marginStart="5sp"
-        android:gravity="left"/>
+        android:gravity="center_vertical"/>
 
     <TextView
         android:id="@+id/precio_concepto"
         android:layout_width="0dp"
         android:layout_weight="1"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:gravity="center"
-        android:paddingTop="5sp"
         android:layout_marginStart="5sp"/>
 
     <TextView
         android:id="@+id/cantidad_concepto"
         android:layout_width="0dp"
         android:layout_weight="1"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:gravity="center"
-        android:paddingTop="5sp"
         android:layout_marginStart="5sp"/>
 
     <TextView
@@ -36,6 +33,5 @@
         android:layout_weight="1"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:paddingTop="5sp"
         android:layout_marginStart="5sp"/>
 </LinearLayout>

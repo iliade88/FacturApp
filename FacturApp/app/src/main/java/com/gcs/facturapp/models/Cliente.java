@@ -41,4 +41,10 @@ public class Cliente {
 
         return false;
     }
+
+    @Override
+    public String toString()
+    {
+        return this.nombre + " " + this.apellidos;
+    }
 }

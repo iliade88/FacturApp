@@ -48,4 +48,8 @@
     <string name="cantidad">Cantidad</string>
     <string name="Total">Total</string>
     <string name="cliente_dp">Cliente: </string>
+    <string name="title_activity_crear_factura">CrearFacturaActivity</string>
+    <string name="nuevo_concepto">Nuevo concepto</string>
+    <string name="precio">Precio</string>
+    <string name="anyadir_concepto">Añadir concepto</string>
 </resources>
