@@ -30,6 +30,15 @@ public class Factura {
         this.conceptos = (ArrayList<Concepto>) factura.conceptos.clone();
     }
 
+    public void anyadirConcepto(Concepto concepto)
+    {
+        conceptos.add(concepto);
+    }
+
+    public short getNumConceptos()
+    {
+        return (short) conceptos.size();
+    }
     @Override
     public boolean equals(Object obj)
     {

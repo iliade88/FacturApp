@@ -83,8 +83,8 @@ public class FacturasActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent crear_factura = new Intent(view.getContext(), CrearFacturaActivity.class);
+                startActivity(crear_factura);
             }
         });
     }

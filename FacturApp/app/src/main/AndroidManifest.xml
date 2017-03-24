@@ -46,9 +46,15 @@
         <activity
             android:name=".CrearClienteActivity"
             android:label="FacturApp - Nuevo cliente" />
+<<<<<<< HEAD
         <activity android:name=".PlantillasActivity" />
         <fragment android:name=".PlantillasTusPlantillasActivity" />
         <fragment android:name=".PlantillasComprarActivity"></fragment>
+=======
+        <activity
+            android:name=".CrearFacturaActivity"
+            android:label="FacturApp - Nueva factura"></activity>
+>>>>>>> 269eb94d87e101f7c96e469e0235f79f18650295
     </application>
 
 </manifest>

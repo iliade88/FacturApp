@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/nuevo_concepto"
+            android:textAppearance="@android:style/TextAppearance.Material.Menu"/>
+
+        <EditText
+            android:id="@+id/descripcion_concepto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/concepto"/>
+
+        <EditText
+            android:id="@+id/precio_concepto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/precio"/>
+
+        <EditText
+            android:id="@+id/cantidad_concepto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/cantidad"/>
+
+        <Button
+            android:id="@+id/anyadir_concepto_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/plus"
+            android:text="@string/anyadir_concepto"/>
+    </LinearLayout>
+
+</ScrollView>
