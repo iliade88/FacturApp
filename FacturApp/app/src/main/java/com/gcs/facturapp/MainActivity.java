@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
         setClickListenerBotonClientes();
         setClickListenerBotonFacturas();
+        setCLickListenerBotonPlantillas();
 
     }
 
@@ -64,6 +65,19 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    protected void setCLickListenerBotonPlantillas()
+    {
+        Button boton_plantillas = (Button) findViewById(R.id.boton_plantillas);
+        boton_plantillas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), PlantillasActivity.class);
+                startActivity(intent);
+        }
+            }
+        );
     }
 
 }
