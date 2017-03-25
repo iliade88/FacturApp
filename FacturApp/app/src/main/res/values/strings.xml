@@ -48,14 +48,11 @@
     <string name="cantidad">Cantidad</string>
     <string name="Total">Total</string>
     <string name="cliente_dp">Cliente: </string>
-<<<<<<< HEAD
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-=======
     <string name="title_activity_crear_factura">CrearFacturaActivity</string>
     <string name="nuevo_concepto">Nuevo concepto</string>
     <string name="precio">Precio</string>
     <string name="anyadir_concepto">Añadir concepto</string>
->>>>>>> 269eb94d87e101f7c96e469e0235f79f18650295
 </resources>
