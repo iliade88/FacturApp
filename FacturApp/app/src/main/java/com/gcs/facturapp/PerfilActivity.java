@@ -160,4 +160,13 @@ public class PerfilActivity extends AppCompatActivity {
         else
             text.setText(edit.getText());
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK && requestCode == 100) {
+            Uri imageUri = data.getData();
+            imagenPerfil.setImageURI(imageUri);
+        }
+    }
 }
