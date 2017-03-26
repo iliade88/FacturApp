@@ -49,14 +49,10 @@ public class LoginActivity extends AppCompatActivity {
                 switch (view.getId()) {
                     case R.id.email_sign_in_button:
 
-                        Log.d("LOGIN:", "Pulsado boton enviar");
-                        if (usu != null)
+                        /*if (usu != null)
                         {
-                            Log.d("LOGIN:", "usu NO NULL");
-                            Log.d("LOGIN:", "EMAIL_FORM-"+email + " EMAIL_USU-"+usu.email+ " PSSW_FORM-"+contrasenya+" PSSW_USU-"+usu.contrasenya);
                             if (email.getText().toString().equals(usu.email) && contrasenya.getText().toString().equals(usu.contrasenya))
                             {
-                                Log.d("LOGIN:", "INTENT");
                                 Intent intent = new Intent(view.getContext(), MainActivity.class);
                                 startActivity(intent);
                             }
@@ -64,7 +60,9 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(view.getContext(), "Login incorrecto", Toast.LENGTH_SHORT).show();
                         }
                         else
-                            Toast.makeText(view.getContext(), "Login incorrecto", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(view.getContext(), "Login incorrecto", Toast.LENGTH_SHORT).show();*/
+                        Intent intent = new Intent(view.getContext(), MainActivity.class);
+                        startActivity(intent);
 
                         break;
                 }
