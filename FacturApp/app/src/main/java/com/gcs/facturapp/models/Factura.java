@@ -1,9 +1,10 @@
 package com.gcs.facturapp.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Factura {
+public class Factura implements Serializable{
     public long id;
     public Date fecha;
     public Cliente cliente;

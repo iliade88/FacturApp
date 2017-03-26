@@ -1,6 +1,8 @@
 package com.gcs.facturapp.models;
 
-public class Concepto {
+import java.io.Serializable;
+
+public class Concepto implements Serializable{
 
     public long id_factura;
     public short id_concepto;

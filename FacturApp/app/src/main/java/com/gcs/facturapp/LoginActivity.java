@@ -6,25 +6,38 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-/**
- * A login screen that offers login via email/password.
- */
+import com.gcs.facturapp.models.Usuario;
+
 public class LoginActivity extends AppCompatActivity {
 
     // UI references.
     private EditText email;
     private EditText contrasenya;
 
+    // Parámetros
+    private Usuario usu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        try{
+            usu = (Usuario)getIntent().getExtras().getSerializable("parametro");
+            Log.d("LOGIN:", "Recibido usu "+ usu.toString());
+        }
+        catch (NullPointerException ex)
+        {
+            usu = null;
+        }
 
         email = (EditText) findViewById(R.id.email);
         contrasenya = (EditText) findViewById(R.id.password);
@@ -36,8 +49,23 @@ public class LoginActivity extends AppCompatActivity {
                 switch (view.getId()) {
                     case R.id.email_sign_in_button:
 
-                        Intent intent = new Intent(view.getContext(), MainActivity.class);
-                        startActivity(intent);
+                        Log.d("LOGIN:", "Pulsado boton enviar");
+                        if (usu != null)
+                        {
+                            Log.d("LOGIN:", "usu NO NULL");
+                            Log.d("LOGIN:", "EMAIL_FORM-"+email + " EMAIL_USU-"+usu.email+ " PSSW_FORM-"+contrasenya+" PSSW_USU-"+usu.contrasenya);
+                            if (email.getText().toString().equals(usu.email) && contrasenya.getText().toString().equals(usu.contrasenya))
+                            {
+                                Log.d("LOGIN:", "INTENT");
+                                Intent intent = new Intent(view.getContext(), MainActivity.class);
+                                startActivity(intent);
+                            }
+                            else
+                                Toast.makeText(view.getContext(), "Login incorrecto", Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                            Toast.makeText(view.getContext(), "Login incorrecto", Toast.LENGTH_SHORT).show();
+
                         break;
                 }
             }

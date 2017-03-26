@@ -1,6 +1,8 @@
 package com.gcs.facturapp.models;
 
-public class Cliente {
+import java.io.Serializable;
+
+public class Cliente implements Serializable{
     public String nombre;
     public String apellidos;
     public String dnicif;
