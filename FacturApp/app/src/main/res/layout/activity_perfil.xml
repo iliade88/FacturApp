@@ -15,7 +15,9 @@
             android:id="@+id/imagenPerfil"
             android:layout_gravity="center"
             android:layout_width="@android:dimen/thumbnail_width"
-            android:layout_height="@android:dimen/thumbnail_height" />
+            android:layout_height="@android:dimen/thumbnail_height"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"/>
 
         <ViewSwitcher
             android:id="@+id/switcher_editar_email"

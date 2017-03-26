@@ -21,7 +21,9 @@
         android:onClick="setClickListenerImagenPerfil"
         android:layout_width="@android:dimen/thumbnail_width"
         android:layout_height="@android:dimen/thumbnail_height"
-        android:src="@drawable/cliente"/>
+        android:src="@drawable/cliente"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"/>
 
     <Button
         android:id="@+id/boton_clientes"

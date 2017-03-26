@@ -74,23 +74,24 @@ public class PerfilActivity extends AppCompatActivity {
         apellidos.setText("Navarro Ruiz");
 
         imagenPerfil = (ImageButton) findViewById(R.id.imagenPerfil);
-        /*imagenPerfil.setOnClickListener(new View.OnClickListener() {
+        imagenPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openGallery();
+
+                Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                getIntent.setType("image/*");
+
+                Intent pickIntent = new Intent(Intent.ACTION_PICK, /*Uri.parse("/mnt/sdcard/")*/android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+                pickIntent.setType("image/*");
+
+                Intent chooserIntent = Intent.createChooser(getIntent, "Select Image");
+                chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[] {pickIntent});
+
+                startActivityForResult(chooserIntent, 100);
             }
-        });*/
+        });
 
-        Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
-        getIntent.setType("image/*");
 
-        Intent pickIntent = new Intent(Intent.ACTION_PICK, /*Uri.parse("/mnt/sdcard/")*/android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-        pickIntent.setType("image/*");
-
-        Intent chooserIntent = Intent.createChooser(getIntent, "Select Image");
-        chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[] {pickIntent});
-
-        startActivityForResult(chooserIntent, 100);
     }
 
     public void onClickEditarPerfil(View v)
@@ -158,20 +159,5 @@ public class PerfilActivity extends AppCompatActivity {
             edit.setText(text.getText());
         else
             text.setText(edit.getText());
-    }
-
-    private void openGallery() {
-        Intent gallery =
-                new Intent(Intent.ACTION_PICK, /*MediaStore.Images.Media.EXTERNAL_CONTENT_URI*/ Uri.parse("/mnt/sdcard/"));
-        startActivityForResult(gallery, 100);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK && requestCode == 100) {
-            Uri imageUri = data.getData();
-            imagenPerfil.setImageURI(imageUri);
-        }
     }
 }
