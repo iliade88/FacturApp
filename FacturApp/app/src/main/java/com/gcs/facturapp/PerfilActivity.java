@@ -12,6 +12,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
+import com.gcs.facturapp.models.Usuario;
+
 public class PerfilActivity extends AppCompatActivity {
 
     private boolean en_edicion;
@@ -66,12 +68,22 @@ public class PerfilActivity extends AppCompatActivity {
         nuevos_apellidos = (EditText) findViewById(R.id.nuevos_apellidos);
         switcher_botones_editar = (ViewSwitcher) findViewById(R.id.switcher_botones_editar);
 
-        email.setText("mario@viajesta.com");
+        Bundle b = this.getIntent().getExtras();
+        Usuario u = new Usuario();
+        u = (Usuario)b.getSerializable("usuario");
+
+        email.setText(u.email);
+        contrasena.setText(u.contrasenya);
+        dnicif.setText(u.dnicif);
+        nombre_empresa.setText(u.nombre_empresa);
+        nombre.setText(u.nombre);
+        apellidos.setText(u.apellidos);
+        /*email.setText("mario@viajesta.com");
         contrasena.setText("Hola");
         dnicif.setText("45628552J");
         nombre_empresa.setText("Viajesta S.A.");
         nombre.setText("Mario");
-        apellidos.setText("Navarro Ruiz");
+        apellidos.setText("Navarro Ruiz");*/
 
         imagenPerfil = (ImageButton) findViewById(R.id.imagenPerfil);
         imagenPerfil.setOnClickListener(new View.OnClickListener() {
