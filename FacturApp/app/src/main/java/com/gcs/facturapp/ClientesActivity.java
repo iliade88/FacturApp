@@ -36,17 +36,6 @@ public class ClientesActivity extends AppCompatActivity {
             clientes = new ArrayList<Cliente>();
         }
 
-        /*try{
-            clien = (Cliente) getIntent().getExtras().getSerializable("nuevocliente");
-            if(clien!=null)
-            {
-                clientes.add(clien);
-            }
-        } catch(Exception e) {
-
-        }*/
-
-
         adapter = new ClienteAdapter(this, clientes);
         lista_clientes.setAdapter(adapter);
         lista_clientes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -55,6 +44,8 @@ public class ClientesActivity extends AppCompatActivity {
                 Cliente cliente_seleccionado = clientes.get(position);
 
                 Intent detalle = new Intent(view.getContext(), DetalleClienteActivity.class);
+                detalle.putExtra("listaclientes", clientes);
+                detalle.putExtra("clienteseleccionado", cliente_seleccionado);
                 startActivity(detalle);
             }
         });
