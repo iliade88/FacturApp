@@ -40,4 +40,12 @@
         android:text="@string/Total"
         android:gravity="center"/>
 
+    <TextView
+        android:id="@+id/eliminar_header_list_conceptos"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:textColor="@android:color/white"
+        android:layout_height="wrap_content"
+        android:gravity="center"/>
+
 </LinearLayout>
