@@ -47,6 +47,7 @@ public class ClientesActivity extends AppCompatActivity {
                 detalle.putExtra("listaclientes", clientes);
                 detalle.putExtra("clienteseleccionado", cliente_seleccionado);
                 startActivity(detalle);
+                finish();
             }
         });
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
