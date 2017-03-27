@@ -1,5 +1,7 @@
 package com.gcs.facturapp.models;
 
+import android.net.Uri;
+
 import java.io.Serializable;
 
 public class Usuario implements Serializable {
@@ -10,6 +12,7 @@ public class Usuario implements Serializable {
     public String nombre_empresa;
     public String nombre;
     public String apellidos;
+    public String foto;
 
     public Usuario(){}
 

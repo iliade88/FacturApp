@@ -1,6 +1,7 @@
 package com.gcs.facturapp;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -30,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
         setClickListenerBotonFacturas();
         setCLickListenerBotonPlantillas();
 
+        if(tempdb.usuario.foto != null){
+            ImageButton ib = (ImageButton)findViewById(R.id.boton_perfil);
+            ib.setImageURI(Uri.parse(tempdb.usuario.foto));
+        }
+
     }
 
     //TODO Arreglar esto
@@ -41,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(view.getContext(), PerfilActivity.class);
                 intent.putExtra("tempdb", tempdb);
+                System.out.println("AAAAAAAA");
+                System.out.println(tempdb.usuario.foto);
                 startActivity(intent);
                 finish();
                 break;

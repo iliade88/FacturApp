@@ -58,8 +58,10 @@ public class PerfilActivity extends AppCompatActivity {
         nombre_empresa.setText(tempdb.usuario.nombre_empresa);
         nombre.setText(tempdb.usuario.nombre);
         apellidos.setText(tempdb.usuario.apellidos);
+        if(tempdb.usuario.foto != null){
+            imagenPerfil.setImageURI(Uri.parse(tempdb.usuario.foto));
+        }
 
-        imagenPerfil = (ImageButton) findViewById(R.id.imagenPerfil);
         imagenPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,7 +69,7 @@ public class PerfilActivity extends AppCompatActivity {
                 Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
                 getIntent.setType("image/*");
 
-                Intent pickIntent = new Intent(Intent.ACTION_PICK, /*Uri.parse("/mnt/sdcard/")*/android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+                Intent pickIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
                 pickIntent.setType("image/*");
 
                 Intent chooserIntent = Intent.createChooser(getIntent, "Select Image");
@@ -102,6 +104,7 @@ public class PerfilActivity extends AppCompatActivity {
         apellidos = (TextView) findViewById(R.id.apellidos);
         nuevos_apellidos = (EditText) findViewById(R.id.nuevos_apellidos);
         switcher_botones_editar = (ViewSwitcher) findViewById(R.id.switcher_botones_editar);
+        imagenPerfil = (ImageButton) findViewById(R.id.imagenPerfil);
     }
 
     public void onClickEditarPerfil(View v)
@@ -184,6 +187,7 @@ public class PerfilActivity extends AppCompatActivity {
         if (resultCode == RESULT_OK && requestCode == 100) {
             Uri imageUri = data.getData();
             imagenPerfil.setImageURI(imageUri);
+            tempdb.usuario.foto = imageUri.toString();
         }
     }
 
