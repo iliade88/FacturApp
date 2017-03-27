@@ -24,12 +24,14 @@
             android:id="@+id/precio_concepto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
             android:hint="@string/precio"/>
 
         <EditText
             android:id="@+id/cantidad_concepto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="number"
             android:hint="@string/cantidad"/>
 
         <Button

@@ -38,4 +38,28 @@
         </ListView>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/crear_factura"
+            style="@style/MyButtonGreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crear factura"
+            android:layout_weight="1"
+            android:drawableStart="@drawable/check"
+            android:onClick="onClickCrearFactura"/>
+
+        <Button
+            android:id="@+id/btn_anyadir_concepto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Añadir concepto"
+            android:drawableStart="@drawable/plus"/>
+    </LinearLayout>
+
 </RelativeLayout>
