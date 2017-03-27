@@ -1,12 +1,18 @@
 package com.gcs.facturapp;
 
+import android.content.Intent;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
+
+import com.gcs.facturapp.models.Usuario;
 
 public class PerfilActivity extends AppCompatActivity {
 
@@ -32,6 +38,7 @@ public class PerfilActivity extends AppCompatActivity {
     private TextView apellidos;
     private EditText nuevos_apellidos;
     private ViewSwitcher switcher_botones_editar;
+    private ImageButton imagenPerfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,12 +68,42 @@ public class PerfilActivity extends AppCompatActivity {
         nuevos_apellidos = (EditText) findViewById(R.id.nuevos_apellidos);
         switcher_botones_editar = (ViewSwitcher) findViewById(R.id.switcher_botones_editar);
 
-        email.setText("mario@viajesta.com");
+        Bundle b = this.getIntent().getExtras();
+        Usuario u = new Usuario();
+        u = (Usuario)b.getSerializable("usuario");
+
+        email.setText(u.email);
+        contrasena.setText(u.contrasenya);
+        dnicif.setText(u.dnicif);
+        nombre_empresa.setText(u.nombre_empresa);
+        nombre.setText(u.nombre);
+        apellidos.setText(u.apellidos);
+        /*email.setText("mario@viajesta.com");
         contrasena.setText("Hola");
         dnicif.setText("45628552J");
         nombre_empresa.setText("Viajesta S.A.");
         nombre.setText("Mario");
-        apellidos.setText("Navarro Ruiz");
+        apellidos.setText("Navarro Ruiz");*/
+
+        imagenPerfil = (ImageButton) findViewById(R.id.imagenPerfil);
+        imagenPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                getIntent.setType("image/*");
+
+                Intent pickIntent = new Intent(Intent.ACTION_PICK, /*Uri.parse("/mnt/sdcard/")*/android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+                pickIntent.setType("image/*");
+
+                Intent chooserIntent = Intent.createChooser(getIntent, "Select Image");
+                chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[] {pickIntent});
+
+                startActivityForResult(chooserIntent, 100);
+            }
+        });
+
+
     }
 
     public void onClickEditarPerfil(View v)
@@ -134,5 +171,14 @@ public class PerfilActivity extends AppCompatActivity {
             edit.setText(text.getText());
         else
             text.setText(edit.getText());
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK && requestCode == 100) {
+            Uri imageUri = data.getData();
+            imagenPerfil.setImageURI(imageUri);
+        }
     }
 }

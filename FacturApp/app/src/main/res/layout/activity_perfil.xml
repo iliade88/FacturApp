@@ -12,9 +12,11 @@
         android:orientation="vertical">
         <!--TODO hacer que se abra el explorador para cargar una imagen-->
         <ImageButton
+            android:id="@+id/imagenPerfil"
             android:layout_gravity="center"
             android:layout_width="@android:dimen/thumbnail_width"
-            android:layout_height="@android:dimen/thumbnail_height" />
+            android:layout_height="@android:dimen/thumbnail_height"
+            android:scaleType="centerCrop"/>
 
         <ViewSwitcher
             android:id="@+id/switcher_editar_email"

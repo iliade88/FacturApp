@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.gcs.facturapp.models.Usuario;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -28,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.boton_perfil:
 
                 Intent intent = new Intent(view.getContext(), PerfilActivity.class);
+                Usuario usuario = new Usuario("mario@viajesta.com", "Hola", "45628552J", "Viajesta S.A.", "Mario", "Navarro Ruiz");
+                Bundle b = new Bundle();
+                b.putSerializable("usuario", usuario);
+                intent.putExtras(b);
                 startActivity(intent);
                 break;
         }
