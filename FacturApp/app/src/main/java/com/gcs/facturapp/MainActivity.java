@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //TODO Arreglar esto
     public void setClickListenerImagenPerfil(View view)
     {
         switch (view.getId())
@@ -47,8 +46,6 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(view.getContext(), PerfilActivity.class);
                 intent.putExtra("tempdb", tempdb);
-                System.out.println("AAAAAAAA");
-                System.out.println(tempdb.usuario.foto);
                 startActivity(intent);
                 finish();
                 break;
