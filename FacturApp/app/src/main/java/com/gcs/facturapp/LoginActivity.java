@@ -49,24 +49,20 @@ public class LoginActivity extends AppCompatActivity {
                 switch (view.getId()) {
                     case R.id.email_sign_in_button:
 
-                        /*if (usu != null)
+                        if (tempdb.usuario.email != null)
                         {
-                            if (email.getText().toString().equals(usu.email) && contrasenya.getText().toString().equals(usu.contrasenya))
+                            if (email.getText().toString().equals(tempdb.usuario.email) && contrasenya.getText().toString().equals(tempdb.usuario.contrasenya))
                             {
                                 Intent intent = new Intent(view.getContext(), MainActivity.class);
+                                intent.putExtra("tempdb", tempdb);
                                 startActivity(intent);
+                                finish();
                             }
                             else
                                 Toast.makeText(view.getContext(), "Login incorrecto", Toast.LENGTH_SHORT).show();
                         }
                         else
-                            Toast.makeText(view.getContext(), "Login incorrecto", Toast.LENGTH_SHORT).show();*/
-
-                        tempdb.usuario = new Usuario("mario@viajesta.com", "1234", "45634221X", "Viajesta S.A", "Mario", "Apellidos");
-                        Intent intent = new Intent(view.getContext(), MainActivity.class);
-                        intent.putExtra("tempdb", tempdb);
-                        startActivity(intent);
-                        finish();
+                            Toast.makeText(view.getContext(), "Login incorrecto", Toast.LENGTH_SHORT).show();
 
                         break;
                 }
@@ -86,7 +82,9 @@ public class LoginActivity extends AppCompatActivity {
                     case R.id.link_registro:
 
                         Intent intent = new Intent(view.getContext(), RegistroActivity.class);
+                        intent.putExtra("tempdb", tempdb);
                         startActivity(intent);
+                        finish();
                         break;
                 }
             }

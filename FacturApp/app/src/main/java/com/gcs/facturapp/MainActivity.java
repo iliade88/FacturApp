@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
             ImageButton ib = (ImageButton)findViewById(R.id.boton_perfil);
             ib.setImageURI(Uri.parse(tempdb.usuario.foto));
         }
-
     }
 
     public void setClickListenerImagenPerfil(View view)

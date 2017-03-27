@@ -18,7 +18,7 @@ public class TempDB implements Serializable {
         clientes = new ArrayList<Cliente>();
         facturas = new ArrayList<Factura>();
 
-        inicializaDatosPrueba();
+        //inicializaDatosPrueba();
     }
 
     private void inicializaDatosPrueba()

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.gcs.facturapp.models.TempDB;
 import com.gcs.facturapp.models.Usuario;
 
 import java.util.regex.Matcher;
@@ -15,10 +16,13 @@ import java.util.regex.Pattern;
 
 public class RegistroActivity extends AppCompatActivity {
 
+    private TempDB tempdb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
+
+        tempdb = (TempDB) getIntent().getExtras().getSerializable("tempdb");
     }
 
     public void registrar(View view) {
@@ -87,15 +91,16 @@ public class RegistroActivity extends AppCompatActivity {
         else
         {
             Usuario usu = new Usuario(email, password, dnicif, nombre_empresa, nombre, apellidos);
+            tempdb.usuario = usu;
 
             switch (view.getId())
             {
                 case R.id.registrar:
 
                     Intent intent = new Intent(view.getContext(), LoginActivity.class);
-                    intent.putExtra("parametro", usu);
-                    Log.d("REGISTRO:", "Mandando usu " + usu.toString());
+                    intent.putExtra("tempdb", tempdb);
                     startActivity(intent);
+                    finish();
                     break;
             }
         }
@@ -145,5 +150,12 @@ public class RegistroActivity extends AppCompatActivity {
         es_cif = m.matches();
 
         return es_dni || es_cif;
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
