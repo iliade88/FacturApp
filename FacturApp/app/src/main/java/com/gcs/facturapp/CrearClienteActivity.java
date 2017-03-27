@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.gcs.facturapp.models.Cliente;
+import com.gcs.facturapp.models.TempDB;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -26,14 +27,13 @@ public class CrearClienteActivity extends AppCompatActivity {
     private Button boton_cancelar_crear_cliente;
     private Button boton_crear_cliente;
 
-    ArrayList<Cliente> clienteslist;
+    private TempDB tempdb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_cliente);
-        clienteslist = (ArrayList<Cliente>) getIntent().getExtras().getSerializable("listaclientes");
-        Log.d("crear cliente", clienteslist.size()+"");
+        tempdb = (TempDB) getIntent().getExtras().getSerializable("tempdb");
     }
 
     public void onClickCancelar(View view)
@@ -42,8 +42,7 @@ public class CrearClienteActivity extends AppCompatActivity {
         {
             case R.id.boton_cancelar_crear_cliente:
                 Intent intent = new Intent(view.getContext(), ClientesActivity.class);
-                //intent.putExtra("nuevocliente", cli);
-                intent.putExtra("listaclientes", clienteslist);
+                intent.putExtra("tempdb", tempdb);
                 startActivity(intent);
                 finish();
                 break;
@@ -69,7 +68,6 @@ public class CrearClienteActivity extends AppCompatActivity {
 
         boolean hay_errores = false;
 
-        /*TODO - Pasar datos a ClientesActivity para añadirlo a la lista*/
         switch (view.getId())
         {
             case R.id.boton_crear_cliente:
@@ -116,10 +114,9 @@ public class CrearClienteActivity extends AppCompatActivity {
                 else
                 {
                     Cliente cli = new Cliente(nombre, apellidos, dni, direccion, telefono, email);
-                    clienteslist.add(cli);
+                    tempdb.clientes.add(cli);
                     Intent intent = new Intent(view.getContext(), ClientesActivity.class);
-                    //intent.putExtra("nuevocliente", cli);
-                    intent.putExtra("listaclientes", clienteslist);
+                    intent.putExtra("tempdb", tempdb);
                     startActivity(intent);
                     finish();
                 }
@@ -187,7 +184,7 @@ public class CrearClienteActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(getApplicationContext(), ClientesActivity.class);
-        intent.putExtra("listaclientes", clienteslist);
+        intent.putExtra("tempdb", tempdb);
         startActivity(intent);
         finish();
     }

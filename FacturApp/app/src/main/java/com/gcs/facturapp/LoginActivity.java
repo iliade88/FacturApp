@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.gcs.facturapp.models.TempDB;
 import com.gcs.facturapp.models.Usuario;
 
 public class LoginActivity extends AppCompatActivity {
@@ -23,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText contrasenya;
 
     // Parámetros
-    private Usuario usu;
+    private TempDB tempdb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +32,11 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         try{
-            usu = (Usuario)getIntent().getExtras().getSerializable("parametro");
-            Log.d("LOGIN:", "Recibido usu "+ usu.toString());
+            tempdb = (TempDB) getIntent().getExtras().getSerializable("tempdb");
         }
         catch (NullPointerException ex)
         {
-            usu = null;
+            tempdb = new TempDB();
         }
 
         email = (EditText) findViewById(R.id.email);
@@ -62,9 +62,11 @@ public class LoginActivity extends AppCompatActivity {
                         else
                             Toast.makeText(view.getContext(), "Login incorrecto", Toast.LENGTH_SHORT).show();*/
 
-                        Usuario usu = new Usuario();
+                        tempdb.usuario = new Usuario("mario@viajesta.com", "1234", "45634221X", "Viajesta S.A", "Mario", "Apellidos");
                         Intent intent = new Intent(view.getContext(), MainActivity.class);
+                        intent.putExtra("tempdb", tempdb);
                         startActivity(intent);
+                        finish();
 
                         break;
                 }

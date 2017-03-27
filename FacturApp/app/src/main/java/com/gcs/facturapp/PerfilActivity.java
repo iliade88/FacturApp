@@ -12,9 +12,12 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
+import com.gcs.facturapp.models.TempDB;
 import com.gcs.facturapp.models.Usuario;
 
 public class PerfilActivity extends AppCompatActivity {
+
+    private TempDB tempdb;
 
     private boolean en_edicion;
     private ViewSwitcher switcher_email;
@@ -45,6 +48,38 @@ public class PerfilActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
+        tempdb = (TempDB) getIntent().getExtras().getSerializable("tempdb");
+
+        cargaCampos();
+
+        email.setText(tempdb.usuario.email);
+        contrasena.setText(tempdb.usuario.contrasenya);
+        dnicif.setText(tempdb.usuario.dnicif);
+        nombre_empresa.setText(tempdb.usuario.nombre_empresa);
+        nombre.setText(tempdb.usuario.nombre);
+        apellidos.setText(tempdb.usuario.apellidos);
+
+        imagenPerfil = (ImageButton) findViewById(R.id.imagenPerfil);
+        imagenPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                getIntent.setType("image/*");
+
+                Intent pickIntent = new Intent(Intent.ACTION_PICK, /*Uri.parse("/mnt/sdcard/")*/android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+                pickIntent.setType("image/*");
+
+                Intent chooserIntent = Intent.createChooser(getIntent, "Select Image");
+                chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[] {pickIntent});
+
+                startActivityForResult(chooserIntent, 100);
+            }
+        });
+    }
+
+    private void cargaCampos()
+    {
         en_edicion = false;
         switcher_email = (ViewSwitcher) findViewById(R.id.switcher_editar_email);
         email = (TextView) findViewById(R.id.email);
@@ -67,43 +102,6 @@ public class PerfilActivity extends AppCompatActivity {
         apellidos = (TextView) findViewById(R.id.apellidos);
         nuevos_apellidos = (EditText) findViewById(R.id.nuevos_apellidos);
         switcher_botones_editar = (ViewSwitcher) findViewById(R.id.switcher_botones_editar);
-
-        Bundle b = this.getIntent().getExtras();
-        Usuario u = new Usuario();
-        u = (Usuario)b.getSerializable("usuario");
-
-        email.setText(u.email);
-        contrasena.setText(u.contrasenya);
-        dnicif.setText(u.dnicif);
-        nombre_empresa.setText(u.nombre_empresa);
-        nombre.setText(u.nombre);
-        apellidos.setText(u.apellidos);
-        /*email.setText("mario@viajesta.com");
-        contrasena.setText("Hola");
-        dnicif.setText("45628552J");
-        nombre_empresa.setText("Viajesta S.A.");
-        nombre.setText("Mario");
-        apellidos.setText("Navarro Ruiz");*/
-
-        imagenPerfil = (ImageButton) findViewById(R.id.imagenPerfil);
-        imagenPerfil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
-                getIntent.setType("image/*");
-
-                Intent pickIntent = new Intent(Intent.ACTION_PICK, /*Uri.parse("/mnt/sdcard/")*/android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-                pickIntent.setType("image/*");
-
-                Intent chooserIntent = Intent.createChooser(getIntent, "Select Image");
-                chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[] {pickIntent});
-
-                startActivityForResult(chooserIntent, 100);
-            }
-        });
-
-
     }
 
     public void onClickEditarPerfil(View v)
@@ -124,6 +122,13 @@ public class PerfilActivity extends AppCompatActivity {
             case R.id.boton_guardar_cambios_perfil:
 
                 toogleSwitchers();
+                tempdb.usuario.email = email.getText().toString();
+                tempdb.usuario.contrasenya = contrasena.getText().toString();
+                tempdb.usuario.dnicif = dnicif.getText().toString();
+                tempdb.usuario.nombre_empresa = nombre_empresa.getText().toString();
+                tempdb.usuario.nombre = nombre.getText().toString();
+                tempdb.usuario.apellidos = apellidos.getText().toString();
+
                 break;
         }
     }
@@ -180,5 +185,13 @@ public class PerfilActivity extends AppCompatActivity {
             Uri imageUri = data.getData();
             imagenPerfil.setImageURI(imageUri);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        intent.putExtra("tempdb", tempdb);
+        startActivity(intent);
+        finish();
     }
 }

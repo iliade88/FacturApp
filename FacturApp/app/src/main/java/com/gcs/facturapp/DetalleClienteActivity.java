@@ -10,6 +10,7 @@ import android.widget.Toast;
 import android.widget.ViewSwitcher;
 
 import com.gcs.facturapp.models.Cliente;
+import com.gcs.facturapp.models.TempDB;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -41,14 +42,31 @@ public class DetalleClienteActivity extends AppCompatActivity {
     private TextView boton_cancelar_cambios_cliente;
     private TextView boton_guardar_cambios_cliente;
 
-    ArrayList<Cliente> clienteslist;
-    Cliente cliente_sel;
+    private TempDB tempdb;
+    private int posicion_seleccionada;
+    private Cliente cliente_seleccionado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_cliente);
 
+        tempdb = (TempDB) getIntent().getExtras().getSerializable("tempdb");
+        posicion_seleccionada = (int) getIntent().getExtras().getSerializable("posicion");
+        cliente_seleccionado = tempdb.clientes.get(posicion_seleccionada);
+
+        cargaCampos();
+
+        nombre.setText(cliente_seleccionado.nombre);
+        apellido.setText(cliente_seleccionado.apellidos);
+        dnicif.setText(cliente_seleccionado.dnicif);
+        direccion.setText(cliente_seleccionado.direccion);
+        telefono.setText(cliente_seleccionado.telefono);
+        email.setText(cliente_seleccionado.email);
+    }
+
+    private void cargaCampos()
+    {
         en_edicion = false;
         switcher_editar_nombre = (ViewSwitcher) findViewById(R.id.switcher_editar_nombre);
         nombre = (TextView) findViewById(R.id.nombre);
@@ -72,15 +90,6 @@ public class DetalleClienteActivity extends AppCompatActivity {
         boton_editar_cliente = (TextView) findViewById(R.id.boton_editar_cliente);
         boton_cancelar_cambios_cliente = (TextView) findViewById(R.id.boton_cancelar_cambios_cliente);
         boton_guardar_cambios_cliente = (TextView) findViewById(R.id.boton_guardar_cambios_cliente);
-
-        clienteslist = (ArrayList<Cliente>) getIntent().getExtras().getSerializable("listaclientes");
-        cliente_sel = (Cliente) getIntent().getExtras().getSerializable("clienteseleccionado");
-        nombre.setText(cliente_sel.nombre);
-        apellido.setText(cliente_sel.apellidos);
-        dnicif.setText(cliente_sel.dnicif);
-        direccion.setText(cliente_sel.direccion);
-        telefono.setText(cliente_sel.telefono);
-        email.setText(cliente_sel.email);
     }
 
     public void onClickEditarCliente(View view)
@@ -160,16 +169,15 @@ public class DetalleClienteActivity extends AppCompatActivity {
                 else
                 {
                     toogleSwitchers();
-                    int posicion_cliente = clienteslist.indexOf(cliente_sel);
 
-                    cliente_sel.email=n_email;
-                    cliente_sel.nombre=n_nombre;
-                    cliente_sel.apellidos=n_apellido;
-                    cliente_sel.direccion=n_direccion;
-                    cliente_sel.telefono=n_telf;
-                    cliente_sel.dnicif=n_dni;
+                    cliente_seleccionado.email=n_email;
+                    cliente_seleccionado.nombre=n_nombre;
+                    cliente_seleccionado.apellidos=n_apellido;
+                    cliente_seleccionado.direccion=n_direccion;
+                    cliente_seleccionado.telefono=n_telf;
+                    cliente_seleccionado.dnicif=n_dni;
 
-                    clienteslist.set(posicion_cliente, cliente_sel);
+                    tempdb.clientes.set(posicion_seleccionada, cliente_seleccionado);
                 }
 
                 break;
@@ -268,18 +276,12 @@ public class DetalleClienteActivity extends AppCompatActivity {
 
         if(en_edicion)
         {
-            cliente_sel.nombre=nombre.getText().toString().trim();
-            cliente_sel.apellidos=apellido.getText().toString().trim();
-            cliente_sel.dnicif=dnicif.getText().toString().trim();
-            cliente_sel.direccion=direccion.getText().toString().trim();
-            cliente_sel.telefono=telefono.getText().toString().trim();
-            cliente_sel.email=email.getText().toString().trim();
             toogleSwitchers();
         }
         else
         {
             Intent intent = new Intent(getApplicationContext(), ClientesActivity.class);
-            intent.putExtra("listaclientes", clienteslist);
+            intent.putExtra("tempdb", tempdb);
             startActivity(intent);
             finish();
         }

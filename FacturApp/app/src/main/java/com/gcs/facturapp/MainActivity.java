@@ -7,14 +7,24 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.gcs.facturapp.models.Cliente;
+import com.gcs.facturapp.models.Factura;
+import com.gcs.facturapp.models.TempDB;
 import com.gcs.facturapp.models.Usuario;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+
+    private TempDB tempdb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        tempdb = (TempDB) getIntent().getExtras().getSerializable("tempdb");
 
         setClickListenerBotonClientes();
         setClickListenerBotonFacturas();
@@ -30,11 +40,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.boton_perfil:
 
                 Intent intent = new Intent(view.getContext(), PerfilActivity.class);
-                Usuario usuario = new Usuario("mario@viajesta.com", "Hola", "45628552J", "Viajesta S.A.", "Mario", "Navarro Ruiz");
-                Bundle b = new Bundle();
-                b.putSerializable("usuario", usuario);
-                intent.putExtras(b);
+                intent.putExtra("tempdb", tempdb);
                 startActivity(intent);
+                finish();
                 break;
         }
     }
@@ -49,7 +57,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.boton_clientes:
 
                         Intent intent = new Intent(view.getContext(), ClientesActivity.class);
+                        intent.putExtra("tempdb", tempdb);
                         startActivity(intent);
+                        finish();
                         break;
                 }
             }
@@ -66,7 +76,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.boton_facturas:
 
                         Intent intent = new Intent(view.getContext(), FacturasActivity.class);
+                        intent.putExtra("tempdb", tempdb);
                         startActivity(intent);
+                        finish();
                         break;
                 }
             }

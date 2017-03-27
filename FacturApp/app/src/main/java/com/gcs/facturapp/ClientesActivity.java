@@ -12,40 +12,36 @@ import android.widget.ListView;
 
 import com.gcs.facturapp.adapters.ClienteAdapter;
 import com.gcs.facturapp.models.Cliente;
+import com.gcs.facturapp.models.TempDB;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 public class ClientesActivity extends AppCompatActivity {
 
+    private TempDB tempdb;
     private ListView lista_clientes;
     private ArrayList<Cliente> clientes;
     ClienteAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clientes);
-
         lista_clientes = (ListView) findViewById(R.id.lista_clientes);
 
-        Cliente clien;
-
-        try{
-            clientes = (ArrayList<Cliente>) getIntent().getExtras().getSerializable("listaclientes");
-        } catch(Exception e) {
-            clientes = new ArrayList<Cliente>();
-        }
+        tempdb = (TempDB) getIntent().getExtras().getSerializable("tempdb");
+        clientes = tempdb.clientes;
 
         adapter = new ClienteAdapter(this, clientes);
         lista_clientes.setAdapter(adapter);
         lista_clientes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Cliente cliente_seleccionado = clientes.get(position);
 
                 Intent detalle = new Intent(view.getContext(), DetalleClienteActivity.class);
-                detalle.putExtra("listaclientes", clientes);
-                detalle.putExtra("clienteseleccionado", cliente_seleccionado);
+                detalle.putExtra("tempdb", tempdb);
+                detalle.putExtra("posicion", position);
                 startActivity(detalle);
                 finish();
             }
@@ -55,7 +51,7 @@ public class ClientesActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), CrearClienteActivity.class);
-                intent.putExtra("listaclientes", clientes);
+                intent.putExtra("tempdb", tempdb);
                 startActivity(intent);
                 finish();
             }
@@ -63,10 +59,10 @@ public class ClientesActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onResume()
-    {
-        super.onResume();
-        adapter.notifyDataSetChanged();
+    public void onBackPressed() {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        intent.putExtra("tempdb", tempdb);
+        startActivity(intent);
+        finish();
     }
-
 }
