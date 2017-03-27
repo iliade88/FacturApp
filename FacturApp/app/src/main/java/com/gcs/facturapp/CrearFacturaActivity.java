@@ -24,35 +24,11 @@ import java.util.Calendar;
 
 public class CrearFacturaActivity extends AppCompatActivity {
 
+    private ArrayList<Factura> facturas;
     private ArrayList<Cliente> clientes;
     private Factura factura;
     private ListView listview_conceptos;
-
-    private Factura creaFacturaStub()
-    {
-        Calendar calendario = Calendar.getInstance();
-        calendario.set(2017, 3, 12);
-
-        Cliente cliente = new Cliente("Mario", "Navarro ruiz", "59343928J", "Calle de elda", "65676543", "mario@viajesta.com");
-
-        ArrayList<Concepto> conceptos = new ArrayList<>();
-        conceptos.add(new Concepto(1, (short) 1, "Galletas", Float.parseFloat("1.20"), 2));
-        conceptos.add(new Concepto(1, (short) 2, "Papel", Float.parseFloat("1.20"), 2));
-        conceptos.add(new Concepto(1, (short) 3, "Servilletas", Float.parseFloat("1.20"), 2));
-        return new Factura(1,calendario.getTime(), cliente, Float.parseFloat("12.20"), conceptos);
-    }
-
-    private ArrayList<Cliente> crearClientes()
-    {
-        ArrayList<Cliente> nuevos_clientes = new ArrayList<>();
-
-        nuevos_clientes.add(new Cliente("Mario", "Navarro ruiz", "59343928J", "Calle de elda", "65676543", "mario@viajesta.com"));
-        nuevos_clientes.add(new Cliente("Alberto", "Sapiña Mora", "59343928J", "Calle de elda", "965692617", "mario@viajesta.com"));
-        nuevos_clientes.add(new Cliente("Cristobal", "Jesus Gonzalez", "59343928J", "Calle de elda", "96543421", "mario@viajesta.com"));
-        nuevos_clientes.add(new Cliente("Manuel", "Volteador Garcia", "59343928J", "Calle de elda", "67654356", "mario@viajesta.com"));
-
-        return nuevos_clientes;
-    }
+    Spinner spinner_listview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,14 +36,15 @@ public class CrearFacturaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_crear_factura);
 
         //Inicializacion de datos stub necesarios
-        clientes = crearClientes();
-        factura = creaFacturaStub();
+        clientes = (ArrayList<Cliente>) getIntent().getExtras().getSerializable("listaclientes");
+        facturas = (ArrayList<Factura>) getIntent().getExtras().getSerializable("listafacturas");
+        factura = new Factura();
 
         //Creamos el select de cliente
-        Spinner spinner = (Spinner) findViewById(R.id.seleccion_cliente);
+        Spinner spinner_listview = (Spinner) findViewById(R.id.seleccion_cliente);
         ArrayAdapter<Cliente> spinnerArrayAdapter = new ArrayAdapter<Cliente>(this, android.R.layout.simple_spinner_item, clientes);
         spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(spinnerArrayAdapter);
+        spinner_listview.setAdapter(spinnerArrayAdapter);
 
         //Creamos el listview de conceptos
         listview_conceptos = (ListView) findViewById(R.id.listview_conceptos_crear_factura);
@@ -118,4 +95,14 @@ public class CrearFacturaActivity extends AppCompatActivity {
         });
     }
 
+    public void onClickCrearFactura(View view)
+    {
+        switch (view.getId())
+        {
+            case R.id.crear_factura:
+                factura.cliente = (Cliente) spinner_listview.getSelectedItem();
+                facturas.add(factura);
+                break;
+        }
+    }
 }

@@ -84,6 +84,7 @@ public class FacturasActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent crear_factura = new Intent(view.getContext(), CrearFacturaActivity.class);
+                crear_factura.putExtra("facturas", facturas);
                 startActivity(crear_factura);
             }
         });

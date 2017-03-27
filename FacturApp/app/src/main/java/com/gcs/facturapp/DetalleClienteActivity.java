@@ -160,12 +160,16 @@ public class DetalleClienteActivity extends AppCompatActivity {
                 else
                 {
                     toogleSwitchers();
+                    int posicion_cliente = clienteslist.indexOf(cliente_sel);
+
                     cliente_sel.email=n_email;
                     cliente_sel.nombre=n_nombre;
                     cliente_sel.apellidos=n_apellido;
                     cliente_sel.direccion=n_direccion;
                     cliente_sel.telefono=n_telf;
                     cliente_sel.dnicif=n_dni;
+
+                    clienteslist.set(posicion_cliente, cliente_sel);
                 }
 
                 break;

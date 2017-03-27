@@ -61,6 +61,8 @@ public class LoginActivity extends AppCompatActivity {
                         }
                         else
                             Toast.makeText(view.getContext(), "Login incorrecto", Toast.LENGTH_SHORT).show();*/
+
+                        Usuario usu = new Usuario();
                         Intent intent = new Intent(view.getContext(), MainActivity.class);
                         startActivity(intent);
 
